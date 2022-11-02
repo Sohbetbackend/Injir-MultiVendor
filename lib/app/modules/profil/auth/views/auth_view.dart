@@ -23,8 +23,21 @@ class AuthView extends GetView<AuthController> {
               height: Get.size.height / 2,
               child: ClipRRect(
                 borderRadius: borderRadius30,
-                child: Image.asset(
-                  logo,
+                child: Center(
+                  child: Container(
+                    width: 150,
+                    height: 150,
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: borderRadius30,
+                    ),
+                    alignment: Alignment.center,
+                    child: const Text(
+                      appName,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: kPrimaryColor, fontFamily: josefinSansBold, fontSize: 50),
+                    ),
+                  ),
                 ),
               ),
             ),

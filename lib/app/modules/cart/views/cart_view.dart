@@ -3,6 +3,7 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 
 import 'package:get/get.dart';
 import 'package:injir/app/constants/widgets.dart';
+import 'package:injir/app/modules/cart/views/order_page.dart';
 
 import '../../../constants/constants.dart';
 import '../controllers/cart_controller.dart';
@@ -31,7 +32,9 @@ class CartView extends GetView<CartController> {
         ],
       ),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {},
+        onPressed: () {
+          Get.to(() => OrderPage());
+        },
         shape: RoundedRectangleBorder(borderRadius: borderRadius20),
         isExtended: true,
         label: Row(

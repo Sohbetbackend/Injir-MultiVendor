@@ -204,11 +204,11 @@ class MyTranslations extends Translations {
           'brands': 'Brendler',
           'locations': 'Salgylarym',
           'signIn1': 'Ulanyjy Ady',
-          'signIn1': 'Ulanyjy şäheri',
+          'signIn2': 'Ulanyjy şäheri',
         },
         'ru': {
           'signIn1': 'Имя пользователя',
-          'signIn1': 'Город пользователя',
+          'signIn2': 'Город пользователя',
           'locations': 'Мои адреса',
           'categories': 'Категории',
           'brands': 'Бренды',

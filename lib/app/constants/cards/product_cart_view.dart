@@ -72,7 +72,9 @@ class ProductCard extends StatelessWidget {
           Positioned(
             top: 8,
             right: 6,
-            child: FavButton(),
+            child: FavButton(
+              whiteColor: false,
+            ),
           )
         ],
       ),

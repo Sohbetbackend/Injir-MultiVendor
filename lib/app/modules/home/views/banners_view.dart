@@ -48,12 +48,12 @@ class BannersView extends GetView {
             autoPlayAnimationDuration: const Duration(milliseconds: 2000),
           ),
         ),
-        dots()
+        dots(a.length)
       ],
     );
   }
 
-  SizedBox dots() {
+  SizedBox dots(int itemCount) {
     return SizedBox(
       height: 4,
       width: Get.size.width,
@@ -61,7 +61,7 @@ class BannersView extends GetView {
         child: ListView.builder(
           shrinkWrap: true,
           scrollDirection: Axis.horizontal,
-          itemCount: a.length,
+          itemCount: itemCount,
           itemBuilder: (BuildContext context, int index) {
             return Obx(() {
               return dot(index);
