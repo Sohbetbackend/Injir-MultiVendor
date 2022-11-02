@@ -1,0 +1,71 @@
+name: injir
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment: 
+  sdk: '>=2.18.0 <3.0.0'
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+  animated_text_kit: ^4.2.2
+  cupertino_icons: ^1.0.2
+  get: 4.6.5
+  cached_network_image: any
+  material_floating_search_bar: ^0.3.7
+  carousel_slider: ^4.0.0
+  dart_code_metrics: ^4.17.1
+  flutter_iconly: ^1.0.2
+  firebase_messaging: ^11.2.6
+  firebase_core: any
+  flutter_local_notifications: any
+  flutter_staggered_grid_view: ^0.4.0
+  http: any
+  google_nav_bar: ^5.0.6
+  restart_app: ^1.1.0
+  vibration: ^1.7.5
+  share: any
+  pull_to_refresh: ^2.0.0
+  lottie: ^1.2.1
+  change_app_package_name: ^1.1.0
+  get_storage: 2.0.3
+  url_launcher: 6.1.6
+  flutter_rating_bar: ^4.0.1
+
+dev_dependencies:
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+  lints: 2.0.0
+
+flutter:
+  assets:
+    - assets/fonts/
+    - assets/icons/
+    - assets/lottie/
+    - assets/images/
+    - assets/images/banners/
+    - assets/images/buymore/
+    - assets/images/category/
+    - assets/images/discount/
+    - assets/images/logo/
+    - assets/images/otherLogo/
+    - assets/images/popularproducts/
+    - assets/images/searchPage/
+    - assets/lang/
+  fonts:
+    - family: JosefinSansBold
+      fonts:
+        - asset: assets/fonts/Gilroy-Bold.ttf
+    - family: JosefinSansSemiBold
+      fonts:
+        - asset: assets/fonts/Gilroy-SemiBold.ttf
+    - family: JosefinSansMedium
+      fonts:
+        - asset: assets/fonts/Gilroy-Medium.ttf
+    - family: JosefinSansRegular
+      fonts:
+        - asset: assets/fonts/Gilroy-Regular.ttf
+  uses-material-design: true
+  generate: true
