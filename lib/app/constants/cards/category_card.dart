@@ -4,7 +4,7 @@ import 'package:injir/app/constants/constants.dart';
 import 'package:injir/app/modules/others/show_all_products/views/show_all_products_view.dart';
 
 class CategoryCard extends StatelessWidget {
-  CategoryCard({super.key, required this.index, required this.page});
+  CategoryCard({required this.index, required this.page});
   final bool page;
   final int index;
   List names = [

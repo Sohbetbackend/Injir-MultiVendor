@@ -3,7 +3,7 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:injir/app/constants/constants.dart';
 
 class FavButton extends StatefulWidget {
-  const FavButton({super.key, required this.whiteColor});
+  const FavButton({required this.whiteColor});
   final bool whiteColor;
   @override
   State<FavButton> createState() => _FavButtonState();

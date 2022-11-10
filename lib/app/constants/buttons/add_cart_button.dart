@@ -3,8 +3,6 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:injir/app/constants/constants.dart';
 
 class AddCartButton extends StatefulWidget {
-  const AddCartButton({super.key});
-
   @override
   State<AddCartButton> createState() => _AddCartButtonState();
 }

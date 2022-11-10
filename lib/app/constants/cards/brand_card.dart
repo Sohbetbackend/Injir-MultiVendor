@@ -5,7 +5,7 @@ import 'package:injir/app/constants/widgets.dart';
 import 'package:injir/app/modules/others/show_all_products/views/show_all_products_view.dart';
 
 class BrandCard extends StatelessWidget {
-  const BrandCard({super.key, required this.index});
+  const BrandCard({required this.index});
   final int index;
   @override
   Widget build(BuildContext context) {

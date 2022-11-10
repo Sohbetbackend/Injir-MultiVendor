@@ -14,12 +14,10 @@ Future<void> main() async {
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({super.key});
-
   @override
   State<MyApp> createState() => _MyAppState();
 }
@@ -50,7 +48,6 @@ class _MyAppState extends State<MyApp> {
       defaultTransition: Transition.fade,
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
-      // home: MedicineApp(),
     );
   }
 }

@@ -13,7 +13,7 @@ class ProductCard extends StatelessWidget {
   final int index;
   final String image;
 
-  const ProductCard({super.key, required this.index, required this.image});
+  const ProductCard({required this.index, required this.image});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,8 +23,9 @@ class ProductCard extends StatelessWidget {
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           elevation: 0,
-          foregroundColor: Color.fromARGB(255, 233, 233, 233),
-          backgroundColor: Color.fromARGB(15, 142, 142, 142),
+
+          // foregroundColor: Color.fromARGB(255, 233, 233, 233),
+          primary: Color.fromARGB(15, 142, 142, 142),
           padding: const EdgeInsets.only(left: 6, right: 6, top: 6, bottom: 5),
           shape: const RoundedRectangleBorder(borderRadius: borderRadius20),
         ),

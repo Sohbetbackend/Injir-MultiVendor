@@ -22,7 +22,7 @@ class ProductProfilView extends GetView<ProductProfilController> {
         margin: EdgeInsets.all(10),
         child: ElevatedButton(
             onPressed: () {},
-            style: ElevatedButton.styleFrom(backgroundColor: kPrimaryColor2, padding: EdgeInsets.symmetric(vertical: 10), shape: RoundedRectangleBorder(borderRadius: borderRadius20)),
+            style: ElevatedButton.styleFrom(primary: kPrimaryColor2, padding: EdgeInsets.symmetric(vertical: 10), shape: RoundedRectangleBorder(borderRadius: borderRadius20)),
             child: Text(
               "Add to Cart",
               style: TextStyle(color: kPrimaryColor, fontFamily: josefinSansSemiBold, fontSize: 20),
