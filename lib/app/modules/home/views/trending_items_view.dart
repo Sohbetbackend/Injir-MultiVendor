@@ -11,11 +11,12 @@ class TrendingItemsView extends GetView {
 
     return Wrap(
       children: [
-        listViewName("Trending Items", true, size),
+        listViewName("trendingItems", true, size),
         SizedBox(
           height: 280,
           child: ListView.builder(
             itemCount: 12,
+            physics: BouncingScrollPhysics(),
             scrollDirection: Axis.horizontal,
             itemBuilder: (BuildContext context, int index) {
               return ProductCard(index: index, image: "assets/images/buymore/${index + 1}.png");

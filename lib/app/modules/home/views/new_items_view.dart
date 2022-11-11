@@ -12,11 +12,12 @@ class NewItemsView extends GetView {
 
     return Wrap(
       children: [
-        listViewName("New Items", true, size),
+        listViewName("newItems", true, size),
         SizedBox(
           height: 280,
           child: ListView.builder(
             itemCount: 16,
+            physics: BouncingScrollPhysics(),
             scrollDirection: Axis.horizontal,
             itemBuilder: (BuildContext context, int index) {
               return ProductCard(index: index, image: "assets/images/discount/${index + 1}.png");

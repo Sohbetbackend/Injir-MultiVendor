@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:injir/app/constants/constants.dart';
+import 'package:injir/app/modules/others/banner_profile_view.dart';
 
 class BannerCard extends StatelessWidget {
   final String image;
@@ -15,7 +17,7 @@ class BannerCard extends StatelessWidget {
     final Size size = MediaQuery.of(context).size;
     return GestureDetector(
       onTap: () {
-        // Get.to(() => BannerProfileView(name, image));
+        Get.to(() => BannerProfileView(name, image, "${loremImpsum}${loremImpsum}"));
       },
       child: Container(
         margin: const EdgeInsets.all(8),
@@ -26,22 +28,6 @@ class BannerCard extends StatelessWidget {
             image,
             fit: BoxFit.cover,
           ),
-          // child: CachedNetworkImage(
-          //   fadeInCurve: Curves.ease,
-          //   imageUrl: image,
-          //   imageBuilder: (context, imageProvider) => Container(
-          //     width: size.width,
-          //     decoration: BoxDecoration(
-          //       borderRadius: borderRadius10,
-          //       image: DecorationImage(
-          //         image: imageProvider,
-          //         fit: BoxFit.cover,
-          //       ),
-          //     ),
-          //   ),
-          //   placeholder: (context, url) => Center(child: spinKit()),
-          //   errorWidget: (context, url, error) => noBannerImage(),
-          // ),
         ),
       ),
     );

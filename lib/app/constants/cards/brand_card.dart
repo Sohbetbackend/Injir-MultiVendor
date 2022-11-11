@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:injir/app/constants/constants.dart';
 import 'package:injir/app/constants/widgets.dart';
-import 'package:injir/app/modules/others/show_all_products/views/show_all_products_view.dart';
+import 'package:injir/app/modules/others/show_all_products_view.dart';
 
 class BrandCard extends StatelessWidget {
   const BrandCard({required this.index});
@@ -10,13 +10,14 @@ class BrandCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(5.0),
+      padding: const EdgeInsets.all(8.0),
       child: ElevatedButton(
           onPressed: () {
             Get.to(() => ShowAllProductsView("Brand Name"));
           },
           style: ElevatedButton.styleFrom(
               padding: EdgeInsets.zero,
+              primary: Color.fromARGB(255, 240, 240, 240),
               shape: RoundedRectangleBorder(
                 borderRadius: borderRadius10,
               ),

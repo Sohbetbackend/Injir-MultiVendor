@@ -20,7 +20,7 @@ class SignInView extends GetView {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20))),
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Form(
         key: _signUp,

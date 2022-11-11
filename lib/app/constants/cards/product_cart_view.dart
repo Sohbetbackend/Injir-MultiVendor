@@ -7,7 +7,7 @@ import 'package:injir/app/constants/cards/discountContainer.dart';
 import 'package:injir/app/constants/constants.dart';
 import 'package:injir/app/modules/others/product_profil/views/product_profil_view.dart';
 
-import '../buttons/add_cart_button.dart';
+import '../buttons/add_cart_button_mini.dart';
 
 class ProductCard extends StatelessWidget {
   final int index;
@@ -23,14 +23,12 @@ class ProductCard extends StatelessWidget {
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           elevation: 0,
-
-          // foregroundColor: Color.fromARGB(255, 233, 233, 233),
           primary: Color.fromARGB(15, 142, 142, 142),
           padding: const EdgeInsets.only(left: 6, right: 6, top: 6, bottom: 5),
           shape: const RoundedRectangleBorder(borderRadius: borderRadius20),
         ),
         onPressed: () {
-          Get.to(() => ProductProfilView());
+          Get.to(() => ProductProfilView(image));
         },
         child: Stack(
           children: [
@@ -40,7 +38,7 @@ class ProductCard extends StatelessWidget {
                 namePart1(index),
               ],
             ),
-            Positioned(bottom: 0, right: 3, child: AddCartButton()),
+            Positioned(bottom: 0, right: 3, child: AddCartButtonMini()),
           ],
         ),
       ),
@@ -75,6 +73,9 @@ class ProductCard extends StatelessWidget {
             right: 6,
             child: FavButton(
               whiteColor: false,
+              id: 1,
+              image: image,
+              name: "Haryt $index",
             ),
           )
         ],

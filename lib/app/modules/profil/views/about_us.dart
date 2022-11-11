@@ -1,10 +1,12 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:get/get.dart';
-import 'package:injir/app/constants/app_bar.dart';
+
 import 'package:injir/app/constants/constants.dart';
+import 'package:injir/app/constants/widgets.dart';
 
 class AboutUs extends StatefulWidget {
   const AboutUs({Key? key}) : super(key: key);
@@ -17,40 +19,43 @@ class _AboutUsState extends State<AboutUs> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: const MyAppBar(
-        backArrow: true,
-        iconRemove: true,
-        elevationWhite: true,
-        name: 'aboutUs',
-        fontSize: 0.0,
+      backgroundColor: kPrimaryColor2,
+      appBar: AppBar(
+        backgroundColor: kPrimaryColor2,
+        elevation: 0,
+        systemOverlayStyle: const SystemUiOverlayStyle(statusBarColor: kPrimaryColor2, statusBarIconBrightness: Brightness.light),
+        centerTitle: true,
+        title: Text("aboutUs".tr),
+        titleTextStyle: TextStyle(color: Colors.white, fontFamily: josefinSansBold, fontSize: 24),
       ),
-      body: Container(
-        padding: const EdgeInsets.all(14.0),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 15, bottom: 8),
-              child: Text(
-                'contactInformation'.tr,
-                style: const TextStyle(color: Colors.black, fontFamily: josefinSansSemiBold, fontSize: 20),
+      body: customWidget(
+        child: Container(
+          padding: const EdgeInsets.all(14.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 15, bottom: 8),
+                child: Text(
+                  'contactInformation'.tr,
+                  style: const TextStyle(color: Colors.black, fontFamily: josefinSansSemiBold, fontSize: 20),
+                ),
               ),
-            ),
-            simpleWidget(
-              icon: IconlyBold.message,
-              name: "dadebaygurbanow333@gmail.com",
-            ),
-            simpleWidget(
-              icon: IconlyBold.location,
-              name: "Aşgabat şäheriniň Bagtyýarlyk etrabynyň Zähmet geçelgesi 27 - nji jaýy",
-            ),
-            simpleWidget(
-              icon: IconlyBold.call,
-              name: "+993-62-99-03-44",
-            ),
-          ],
+              simpleWidget(
+                icon: IconlyBold.message,
+                name: "dadebaygurbanow333@gmail.com",
+              ),
+              simpleWidget(
+                icon: IconlyBold.location,
+                name: "Aşgabat şäheriniň Bagtyýarlyk etrabynyň Zähmet geçelgesi 27 - nji jaýy",
+              ),
+              simpleWidget(
+                icon: IconlyBold.call,
+                name: "+993-62-99-03-44",
+              ),
+            ],
+          ),
         ),
       ),
     );

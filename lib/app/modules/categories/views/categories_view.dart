@@ -29,7 +29,7 @@ class _CategoriesViewState extends State<CategoriesView> {
       indicatorWeight: 2,
       tabs: [
         Tab(
-          text: 'categories'.tr,
+          text: 'categoriesMini'.tr,
         ),
         Tab(
           text: 'brands'.tr,
@@ -40,10 +40,10 @@ class _CategoriesViewState extends State<CategoriesView> {
 
   Widget page2(int length) {
     return GridView.builder(
-      physics: const AlwaysScrollableScrollPhysics(),
       shrinkWrap: true,
       itemCount: length,
       scrollDirection: Axis.vertical,
+      physics: const AlwaysScrollableScrollPhysics(),
       itemBuilder: (context, index) {
         return BrandCard(index: index);
       },
@@ -83,8 +83,9 @@ class _CategoriesViewState extends State<CategoriesView> {
         backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: kPrimaryColor2,
-          title: Text("Injir"),
-          titleTextStyle: TextStyle(color: Colors.white, fontFamily: josefinSansBold, fontSize: 35),
+          title: Text("categoriesMini".tr),
+          elevation: 0,
+          titleTextStyle: TextStyle(color: Colors.white, fontFamily: josefinSansBold, fontSize: 24),
           centerTitle: true,
         ),
         body: SmartRefresher(

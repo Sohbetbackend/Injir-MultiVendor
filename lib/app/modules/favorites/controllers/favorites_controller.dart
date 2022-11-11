@@ -1,20 +1,45 @@
+import 'dart:convert';
+
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 class FavoritesController extends GetxController {
-  //TODO: Implement FavoritesController
-
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  final RxList favList = [].obs;
+  final storage = GetStorage();
+  dynamic toggleFav(int id, String name, String image) {
+    if (favList.isEmpty) {
+      favList.add({'id': id, 'name': name, 'image': image});
+    } else {
+      bool value = false;
+      for (final element in favList) {
+        if (element['id'] == id) {
+          value = true;
+        }
+      }
+      if (value) {
+        favList.removeWhere((element) => element['id'] == id);
+      } else if (!value) {
+        favList.add({'id': id, 'name': name, 'image': image});
+      }
+    }
+    favList.refresh();
+    final String jsonString = jsonEncode(favList);
+    storage.write('favList', jsonString);
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  dynamic returnFavList() {
+    final result = storage.read('favList') ?? '[]';
+    final List jsonData = jsonDecode(result);
+    if (jsonData.isNotEmpty) {
+      for (final element in jsonData) {
+        toggleFav(element['id'], element['name'], element['image']);
+      }
+    }
   }
 
-  @override
-  void onClose() {}
-  void increment() => count.value++;
+  dynamic clearFavList() {
+    favList.clear();
+    final String jsonString = jsonEncode(favList);
+    storage.write('favList', jsonString);
+  }
 }

@@ -1,10 +1,10 @@
 // ignore_for_file: file_names
 
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:get/get.dart';
-import 'package:injir/app/constants/app_bar.dart';
+
 import 'package:injir/app/constants/constants.dart';
 
 class HistoryOrdersPage extends StatelessWidget {
@@ -13,7 +13,14 @@ class HistoryOrdersPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const MyAppBar(backArrow: true, fontSize: 0.0, elevationWhite: true, iconRemove: true, name: 'orders'),
+      appBar: AppBar(
+        backgroundColor: kPrimaryColor2,
+        elevation: 0,
+        systemOverlayStyle: const SystemUiOverlayStyle(statusBarColor: kPrimaryColor2, statusBarIconBrightness: Brightness.light),
+        centerTitle: true,
+        title: Text("orders".tr),
+        titleTextStyle: TextStyle(color: Colors.white, fontFamily: josefinSansBold, fontSize: 24),
+      ),
       body: ListView.builder(
         itemCount: 15,
         scrollDirection: Axis.vertical,

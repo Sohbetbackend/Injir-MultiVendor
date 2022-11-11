@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:get/get.dart';
 import 'package:injir/app/modules/home/controllers/home_controller.dart';
+import 'package:injir/app/modules/others/show_all_products_view.dart';
 import 'package:lottie/lottie.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
@@ -60,17 +61,19 @@ Padding customDivider() {
 
 Padding listViewName(String text, bool icon, Size size) {
   return Padding(
-    padding: EdgeInsets.only(left: 15, right: 15, top: icon ? 25 : 0, bottom: 10),
+    padding: EdgeInsets.only(left: 15, right: 15, top: 25, bottom: 10),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          text,
+          text.tr,
           style: TextStyle(color: Colors.black, fontSize: size.width >= 800 ? 30 : 22, fontFamily: josefinSansSemiBold),
         ),
         icon
             ? GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Get.to(() => ShowAllProductsView(text));
+                },
                 child: Icon(
                   IconlyBroken.arrowRightCircle,
                   color: Colors.black,
@@ -361,4 +364,26 @@ Future<Object?> showDeleteDialog({required BuildContext context, required String
       return const SizedBox.shrink();
     },
   );
+}
+
+Padding textpart(String name, bool value) {
+  return Padding(
+    padding: EdgeInsets.only(left: 8, top: value ? 15 : 30),
+    child: Text(
+      name.tr,
+      overflow: TextOverflow.ellipsis,
+      maxLines: 1,
+      style: const TextStyle(fontSize: 18, color: Colors.black, fontFamily: josefinSansMedium),
+    ),
+  );
+}
+
+Widget customWidget({required Widget child}) {
+  return Container(
+      padding: EdgeInsets.only(top: 10),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.only(topLeft: Radius.circular(30), topRight: Radius.circular(30)),
+        color: Colors.white,
+      ),
+      child: ClipRRect(borderRadius: BorderRadius.only(topLeft: Radius.circular(30), topRight: Radius.circular(30)), child: child));
 }

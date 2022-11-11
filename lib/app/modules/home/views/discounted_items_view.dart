@@ -12,11 +12,12 @@ class DiscountedItems extends GetView {
 
     return Wrap(
       children: [
-        listViewName("Discounted Items", true, size),
+        listViewName("discountedItems", true, size),
         SizedBox(
           height: 280,
           child: ListView.builder(
             itemCount: 11,
+            physics: BouncingScrollPhysics(),
             scrollDirection: Axis.horizontal,
             itemBuilder: (BuildContext context, int index) {
               return ProductCard(index: index, image: "assets/images/popularproducts/${index + 1}.png");

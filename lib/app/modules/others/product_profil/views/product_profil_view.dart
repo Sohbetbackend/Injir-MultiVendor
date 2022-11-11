@@ -12,6 +12,9 @@ import 'package:share/share.dart';
 import '../controllers/product_profil_controller.dart';
 
 class ProductProfilView extends GetView<ProductProfilController> {
+  final String image;
+
+  ProductProfilView(this.image);
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -212,6 +215,9 @@ class ProductProfilView extends GetView<ProductProfilController> {
             ),
             child: FavButton(
               whiteColor: true,
+              id: 1,
+              image: "assets/images/buymore/0.png",
+              name: 'Haryt 1',
             ),
           ),
         ),

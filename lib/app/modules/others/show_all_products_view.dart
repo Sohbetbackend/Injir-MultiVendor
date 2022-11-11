@@ -20,7 +20,7 @@ class ShowAllProductsView extends StatefulWidget {
 }
 
 class _ShowAllProductsViewState extends State<ShowAllProductsView> {
-  String name = 'Janome';
+  String name = 'Ashgabat';
   int value = 0;
 
   final TextEditingController _controller = TextEditingController();
@@ -64,7 +64,7 @@ class _ShowAllProductsViewState extends State<ShowAllProductsView> {
             },
             icon: const Icon(
               IconlyBroken.filter,
-              color: Colors.black,
+              color: Colors.white,
             ),
           ),
           const SizedBox(
@@ -100,7 +100,7 @@ class _ShowAllProductsViewState extends State<ShowAllProductsView> {
             },
             child: const Icon(
               IconlyBroken.filter2,
-              color: Colors.black,
+              color: Colors.white,
               size: 30,
             ),
           ),
@@ -207,11 +207,15 @@ class _ShowAllProductsViewState extends State<ShowAllProductsView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: kPrimaryColor2,
       appBar: AppBar(
-        title: Text(widget.name),
+        title: Text(
+          widget.name,
+          style: TextStyle(color: Colors.white, fontFamily: josefinSansSemiBold, fontSize: 22),
+        ),
         centerTitle: true,
-        elevation: 2,
+        backgroundColor: kPrimaryColor2,
+        elevation: 0,
         actions: [leftSideAppBar()],
       ),
       body: SmartRefresher(
@@ -225,16 +229,25 @@ class _ShowAllProductsViewState extends State<ShowAllProductsView> {
         header: const MaterialClassicHeader(
           color: kPrimaryColor,
         ),
-        child: StaggeredGridView.countBuilder(
-          crossAxisCount: 2,
-          itemCount: 16,
-          itemBuilder: (context, index) => ProductCard(
-            index: index,
-            image: "assets/images/discount/${index + 1}.png",
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(topLeft: Radius.circular(30), topRight: Radius.circular(30)),
+            color: Colors.white,
           ),
-          staggeredTileBuilder: (index) => StaggeredTile.count(
-            1,
-            index % 2 == 0 ? 1.4 : 1.6,
+          child: ClipRRect(
+            borderRadius: BorderRadius.only(topLeft: Radius.circular(30), topRight: Radius.circular(30)),
+            child: StaggeredGridView.countBuilder(
+              crossAxisCount: 2,
+              itemCount: 16,
+              itemBuilder: (context, index) => ProductCard(
+                index: index,
+                image: "assets/images/discount/${index + 1}.png",
+              ),
+              staggeredTileBuilder: (index) => StaggeredTile.count(
+                1,
+                index % 2 == 0 ? 1.4 : 1.6,
+              ),
+            ),
           ),
         ),
       ),

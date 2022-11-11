@@ -3,7 +3,6 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 
 import 'package:get/get.dart';
 import 'package:injir/app/constants/constants.dart';
-import 'package:injir/app/constants/widgets.dart';
 import 'package:injir/app/modules/profil/auth/views/log_in_view.dart';
 import 'package:injir/app/modules/profil/auth/views/sign_in_view.dart';
 
@@ -69,20 +68,16 @@ class AuthView extends GetView<AuthController> {
                               text: 'signUp'.tr,
                             ),
                             Tab(
-                              text: 'signIn'.tr,
+                              text: 'login'.tr,
                             )
                           ],
                         ),
                       ),
                     ),
-                    dividerr(),
                     Expanded(
                       flex: 2,
-                      child: Container(
-                        color: kPrimaryColor,
-                        child: TabBarView(
-                          children: [SignInView(), LogInView()],
-                        ),
+                      child: TabBarView(
+                        children: [SignInView(), LogInView()],
                       ),
                     ),
                   ],
@@ -98,7 +93,7 @@ class AuthView extends GetView<AuthController> {
                 },
                 icon: const Icon(
                   IconlyBroken.arrowLeftCircle,
-                  color: Colors.black,
+                  color: Colors.white,
                   size: 30,
                 ),
               ),

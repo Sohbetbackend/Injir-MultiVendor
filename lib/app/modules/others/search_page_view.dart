@@ -5,6 +5,7 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:get/get.dart';
 import 'package:injir/app/constants/constants.dart';
 import 'package:injir/app/constants/widgets.dart';
+import 'package:injir/app/modules/others/show_all_products_view.dart';
 
 class SearchPageView extends StatelessWidget {
   @override
@@ -42,8 +43,7 @@ class SearchPageView extends StatelessWidget {
                             ),
                             filled: true,
                             isDense: true,
-                            hintText: "Найти в Injir".tr,
-                            // hintText: "search".tr,
+                            hintText: "search".tr,
                             contentPadding: const EdgeInsets.only(left: 50),
                             hintStyle: TextStyle(fontFamily: josefinSansMedium, fontSize: 18, color: Colors.grey.shade500),
                             fillColor: Colors.grey.withOpacity(0.3),
@@ -115,7 +115,7 @@ class SearchPageView extends StatelessWidget {
                           itemBuilder: (BuildContext context, int indexx) {
                             return GestureDetector(
                               onTap: () {
-                                // Get.to(() => const ShowAllProducts());
+                                Get.to(() => ShowAllProductsView(categories[index]["subСategory"][indexx]));
                               },
                               child: Padding(
                                 padding: EdgeInsets.only(right: 8, top: 8, left: Get.size.width / 5, bottom: indexx == categories[index]["subСategory"].length - 1 ? 20 : 8),

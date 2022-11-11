@@ -1,11 +1,13 @@
 // ignore_for_file: file_names, deprecated_member_use, prefer_typing_uninitialized_variables
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:injir/app/constants/app_bar.dart';
+
 import 'package:injir/app/constants/constants.dart';
 import 'package:injir/app/constants/custom_text_field.dart';
 import 'package:injir/app/constants/phone_number.dart';
+import 'package:injir/app/constants/widgets.dart';
 
 class ProfileSettings extends StatefulWidget {
   const ProfileSettings({Key? key}) : super(key: key);
@@ -37,11 +39,18 @@ class _ProfileSettingsState extends State<ProfileSettings> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: const MyAppBar(backArrow: true, fontSize: 0.0, iconRemove: true, elevationWhite: true, name: 'profil'),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: SingleChildScrollView(
+      backgroundColor: kPrimaryColor2,
+      appBar: AppBar(
+        backgroundColor: kPrimaryColor2,
+        elevation: 0,
+        systemOverlayStyle: const SystemUiOverlayStyle(statusBarColor: kPrimaryColor2, statusBarIconBrightness: Brightness.light),
+        centerTitle: true,
+        title: Text("profil".tr),
+        titleTextStyle: TextStyle(color: Colors.white, fontFamily: josefinSansBold, fontSize: 24),
+      ),
+      body: customWidget(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.max,
